@@ -1,0 +1,29 @@
+{
+  "model_name": "Random Forest Document Forgery Classifier",
+  "model_version": "RF-Forensic-v1.0",
+  "trained_date": "2026-08-18",
+  "num_training_samples": 640,
+  "num_test_samples": 160,
+  "accuracy": 100.0,
+  "precision": 100.0,
+  "recall": 100.0,
+  "f1_score": 100.0,
+  "confusion_matrix": {
+    "true_negatives": 80,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "true_positives": 80
+  },
+  "feature_importances": {
+    "mean_ela": 0.06,
+    "max_ela": 0.1805,
+    "std_ela": 0.2005,
+    "ela_anomaly_ratio": 0.08,
+    "noise_mean": 0.0,
+    "noise_std": 0.0594,
+    "noise_inconsistency": 0.2438,
+    "copy_move_matches": 0.16,
+    "color_balance_std": 0.0159,
+    "edge_density": 0.0
+  }
+}

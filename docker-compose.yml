@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  # MySQL Database Service
+  mysql_db:
+    image: mysql:8.0
+    container_name: forgery_detection_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: forgery_detection_db
+      MYSQL_USER: forgery_user
+      MYSQL_PASSWORD: forgery_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  # FastAPI Backend Service
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: forgery_detection_backend
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=mysql+pymysql://forgery_user:forgery_password@mysql_db:3306/forgery_detection_db
+      - SECRET_KEY=super-secret-jwt-forgery-detection-key-2026-production
+      - ACCESS_TOKEN_EXPIRE_MINUTES=10080
+      - UPLOAD_DIR=/app/uploads
+      - PROCESSED_DIR=/app/processed
+      - REPORTS_DIR=/app/reports
+      - MODELS_DIR=/app/models
+    depends_on:
+      - mysql_db
+    volumes:
+      - backend_uploads:/app/uploads
+      - backend_processed:/app/processed
+      - backend_reports:/app/reports
+      - backend_models:/app/models
+
+  # React Frontend Service
+  frontend:
+    build:
+      context: ./forgery detection
+      dockerfile: Dockerfile
+    container_name: forgery_detection_frontend
+    restart: always
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  mysql_data:
+  backend_uploads:
+  backend_processed:
+  backend_reports:
+  backend_models:
