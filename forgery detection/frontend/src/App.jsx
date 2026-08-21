@@ -12,7 +12,6 @@ import Dashboard from './pages/Dashboard';
 import UploadPage from './pages/UploadPage';
 import ResultPage from './pages/ResultPage';
 import HistoryPage from './pages/HistoryPage';
-import ReportsPage from './pages/ReportsPage';
 import MLModelInfoPage from './pages/MLModelInfoPage';
 import AdminDashboard from './pages/AdminDashboard';
 import ProfilePage from './pages/ProfilePage';
@@ -77,7 +76,7 @@ function App() {
               <Route path="compare" element={<ProtectedRoute><ComparativeDiffPage /></ProtectedRoute>} />
               <Route path="result/:id" element={<ProtectedRoute><ResultPage /></ProtectedRoute>} />
               <Route path="history" element={<ProtectedRoute><HistoryPage /></ProtectedRoute>} />
-              <Route path="reports" element={<ProtectedRoute><ReportsPage /></ProtectedRoute>} />
+              <Route path="reports" element={<Navigate to="/dashboard" replace />} />
               <Route path="model-info" element={<ProtectedRoute><MLModelInfoPage /></ProtectedRoute>} />
               <Route path="profile" element={<ProtectedRoute><ProfilePage /></ProtectedRoute>} />
 

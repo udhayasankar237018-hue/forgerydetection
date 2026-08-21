@@ -18,7 +18,6 @@ import {
   ChevronDown,
   CheckCircle2,
   AlertTriangle,
-  FileCheck2,
   GitCompare,
   Lock
 } from 'lucide-react';
@@ -47,7 +46,6 @@ const Navbar = () => {
     { to: '/batch', label: 'Batch Audit', icon: Layers },
     { to: '/compare', label: 'Optical Diff', icon: GitCompare },
     { to: '/history', label: 'History', icon: History },
-    { to: '/reports', label: 'Certified Reports', icon: FileCheck2 },
     { to: '/verify', label: 'Verify Portal', icon: Lock },
     { to: '/model-info', label: 'ML Model & ELA', icon: Cpu },
   ];

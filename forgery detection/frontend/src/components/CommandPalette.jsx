@@ -12,8 +12,7 @@ import {
   LogOut, 
   ArrowRight,
   Sparkles,
-  Command,
-  FileCheck2
+  Command
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../context/ToastContext';
@@ -33,7 +32,6 @@ const CommandPalette = ({ isOpen, onClose }) => {
     { id: 'compare', title: 'Dual-Document Comparative Diff', subtitle: 'SSIM optical alignment against master templates', icon: Sparkles, path: '/compare', category: 'Forensics' },
     { id: 'verify', title: 'Public Cryptographic Registry', subtitle: 'Verify certificates and immutable SHA-256 digests', icon: ShieldCheck, path: '/verify', category: 'Registry' },
     { id: 'history', title: 'Detection History Archive', subtitle: 'Filter and search past forensic results', icon: History, path: '/history', category: 'Navigation' },
-    { id: 'reports', title: 'Certified PDF Reports', subtitle: 'View and export certified audit certificates', icon: FileCheck2, path: '/reports', category: 'Navigation' },
     { id: 'model', title: 'ML Architecture & ELA Simulator', subtitle: 'Inspect model benchmarks and simulate inference', icon: Cpu, path: '/model-info', category: 'Forensics' },
     { id: 'profile', title: 'Analyst Profile & Security', subtitle: 'Manage analyst badge, API keys, and session', icon: User, path: '/profile', category: 'Account' },
   ];

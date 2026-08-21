@@ -14,7 +14,6 @@ import {
   ChevronRight,
   Activity,
   Zap,
-  FileCheck2,
   GitCompare,
   Lock
 } from 'lucide-react';
@@ -29,7 +28,6 @@ const Sidebar = () => {
     { to: '/batch', label: 'Batch Audit', icon: Layers },
     { to: '/compare', label: 'Comparative Diff', icon: GitCompare },
     { to: '/history', label: 'Detection History', icon: History },
-    { to: '/reports', label: 'Forensic Reports', icon: FileCheck2 },
     { to: '/verify', label: 'Verify Portal', icon: Lock },
     { to: '/model-info', label: 'ML Model & ELA', icon: Cpu },
     { to: '/profile', label: 'Analyst Profile', icon: User },
