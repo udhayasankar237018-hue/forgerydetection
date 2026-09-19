@@ -19,7 +19,7 @@ services:
   # FastAPI Backend Service
   backend:
     build:
-      context: ./backend
+      context: "./forgery detection/backend"
       dockerfile: Dockerfile
     container_name: forgery_detection_backend
     restart: always
@@ -44,7 +44,7 @@ services:
   # React Frontend Service
   frontend:
     build:
-      context: ./forgery detection
+      context: "./forgery detection/frontend"
       dockerfile: Dockerfile
     container_name: forgery_detection_frontend
     restart: always
