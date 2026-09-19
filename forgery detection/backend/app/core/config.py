@@ -17,8 +17,8 @@ class Settings(BaseSettings):
     BASE_DIR: str = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 
     # Database
-    # Standard default is MySQL; if connection fails, auto-fallback to SQLite
-    DATABASE_URL: str = "mysql+pymysql://root:root@localhost:3306/forgery_detection_db"
+    # Standard default is SQLite for immediate portability; override via DATABASE_URL env var if using MySQL
+    DATABASE_URL: str = "sqlite:///./forgery_detection.db"
     SQLITE_FALLBACK_URL: str = f"sqlite:///{os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'forgery_detection.db')).replace(os.sep, '/')}"
     UPLOAD_DIR: str = os.path.join(BASE_DIR, "uploads")
     PROCESSED_DIR: str = os.path.join(BASE_DIR, "processed")
